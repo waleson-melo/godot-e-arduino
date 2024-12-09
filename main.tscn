@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://byj762t6fb1hc"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_ftear"]
+[ext_resource type="Texture2D" uid="uid://b3ck8lb77jr2q" path="res://green.jpg" id="2_y1ltg"]
+[ext_resource type="Texture2D" uid="uid://bwpwaji7c67t8" path="res://yellow.jpg" id="4_f6bl1"]
+[ext_resource type="Texture2D" uid="uid://bmms6q5xkklcc" path="res://red.jpg" id="4_gl745"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7la2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y1ltg")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gl745")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f6bl1")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ftear")
+
+[node name="Locked" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 93.0
+offset_top = 77.0
+offset_right = 1055.0
+offset_bottom = 194.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 40
+text = "Bloqueado"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(534, 326)
+sprite_frames = SubResource("SpriteFrames_n7la2")
+animation = &"green"
+autoplay = "green"
